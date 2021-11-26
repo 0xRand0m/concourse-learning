@@ -7,11 +7,15 @@ image_resource:
     repository: alpine
     tag: '3.15'
 
+params:
+  NAME:
+
 inputs:
   - name: learning-git
-  - name: message
+outputs:
+  - name: output
 
 run:
-  path: learning-git/jobs/hello-world.sh
+  path: learning-git/jobs/generate-message.sh
 args:
-  - message/out.txt
+  - output/out.txt

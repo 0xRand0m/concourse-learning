@@ -1,4 +1,5 @@
 #!/bin/sh
 
-echo -e "\e[32mHello $NAME!\e[0m"
+input=$1
+echo -e "\e[32m$(cat $input)\e[0m"
 

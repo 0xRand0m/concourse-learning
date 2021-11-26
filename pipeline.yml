@@ -7,11 +7,18 @@ resources:
 jobs:
 - name: hello-job
   plan:
-  - get: learning
-    trigger: true
-  - task: hello-world
-    input_mapping:
-      learning-git: learning
-    params:
-      NAME: Jan
-    file: learning/jobs/hello-world.yml
+    - get: learning
+      trigger: true
+    - task: generate-output
+      input_mapping:
+        learning-git: learning
+      output_mapping:
+        output: generated-output
+      params:
+        NAME: Jan
+      file: learning/jobs/hello-world.yml
+    - task: print-output
+      input_mapping:
+        learning-git: learning
+        input: generated-output
+      file: learning/jobs/hello-world.yml
