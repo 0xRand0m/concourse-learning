@@ -1,0 +1,13 @@
+---
+resources:
+- name: learning
+  type: git
+  source: {uri: "https://github.com/0xRand0m/concourse-learning.git"}
+
+jobs:
+- name: Hello World
+  plan:
+  - get: learning
+    trigger: true
+  - task: Hello World
+    file: learning/jobs/hello-world.yml
