@@ -10,7 +10,7 @@ jobs:
   - get: learning
     trigger: true
   - task: hello-world
-    input-mappings:
+    input_mapping:
       learning-git: learning
     params:
       NAME: Jan
