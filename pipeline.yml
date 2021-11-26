@@ -10,4 +10,8 @@ jobs:
   - get: learning
     trigger: true
   - task: Hello World
+    input-mappings:
+      learning-git: learning
+    params:
+      NAME: Jan
     file: learning/jobs/hello-world.yml

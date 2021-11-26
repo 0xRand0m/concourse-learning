@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: alpine
+    tag: 'latest'
+
+params:
+  NAME:
+
+inputs:
+- name: learning-git
+
+run:
+  path: learning-git/jobs/hello-world.sh

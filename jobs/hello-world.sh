@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo -e "\e[32mHello World!\e[0m"
+echo -e "\e[32mHello $NAME!\e[0m"
 
