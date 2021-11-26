@@ -5,11 +5,11 @@ resources:
   source: {uri: "https://github.com/0xRand0m/concourse-learning.git"}
 
 jobs:
-- name: Hello World
+- name: hello-job
   plan:
   - get: learning
     trigger: true
-  - task: Hello World
+  - task: hello-world
     input-mappings:
       learning-git: learning
     params:
