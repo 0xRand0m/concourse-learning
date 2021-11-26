@@ -17,5 +17,5 @@ outputs:
 
 run:
   path: learning-git/jobs/generate-message.sh
-args:
-  - output/out.txt
+  args:
+    - output/out.txt

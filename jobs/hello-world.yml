@@ -13,5 +13,5 @@ inputs:
 
 run:
   path: learning-git/jobs/hello-world.sh
-args:
-  - message/out.txt
+  args:
+    - message/out.txt
