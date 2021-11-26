@@ -20,5 +20,5 @@ jobs:
     - task: print-output
       input_mapping:
         learning-git: learning
-        input: generated-output
+        message: generated-output
       file: learning/jobs/hello-world.yml
