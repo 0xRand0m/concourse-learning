@@ -3,7 +3,8 @@ resources:
 - name: repo-dev-test
   type: git
   source:
-    uri: https://github.com/0xRand0m/concourse-learning.git
+    #uri: https://github.com/0xRand0m/concourse-learning.git
+    uri: git@github.com:0xRand0m/concourse-learning.git
     branch: dev-test
 
 jobs:
@@ -11,7 +12,7 @@ jobs:
   plan:
     - get: repo-dev-test
       trigger: true
-    - task: check-if-file-exists-task # task name
+    - task: check-if-file-exists-task
       #file: repo-dev-test/jobs/check-if-file-exists-task.yaml
       config:
         platform: linux
