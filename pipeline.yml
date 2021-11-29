@@ -16,7 +16,7 @@ jobs:
       - task: check-if-file-exists-task # task name
         #file: repo-dev-test/jobs/check-if-file-exists-task.yaml
         #config:
-        file: repo-dev-test/jobs/check-if-file-exists-task.yaml
+        file: repo-dev-test/jobs/check-if-file-exists-task.yml
         input_mapping:
           learning-git: learning
         output_mapping:
