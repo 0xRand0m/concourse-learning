@@ -4,6 +4,6 @@ echo $NAME "file da"
 FILE=$NAME
 if [ -f "$FILE" ]; then
     echo "$FILE exists."
-    echo "$FILE" > $EXISTS
+    echo "$FILE" > $output
     echo $EXISTS
 fi

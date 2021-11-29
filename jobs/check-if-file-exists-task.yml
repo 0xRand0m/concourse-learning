@@ -11,9 +11,11 @@ params:
   FILE:
 
 #inputs:
-  - name: file-path
-#outputs:
+  #- name: file-path
+outputs:
   - name: output
 
 run:
   path: repo-dev-test/jobs/check-if-file-exists.sh
+  args:
+    - output/out.txt
