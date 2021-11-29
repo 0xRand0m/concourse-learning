@@ -20,4 +20,5 @@ jobs:
         output_mapping:
           output: generated-output
         params:
-          name: repo-dev-test/README.md
+          NAME: repo-dev-test/README.md
+          FILE: repo-dev-test/README.md

@@ -9,6 +9,7 @@ image_resource:
 
 params: 
   NAME:
+  FILE:
 
 inputs:
   - name: repo-path
