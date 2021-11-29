@@ -20,4 +20,4 @@ outputs:
 run:
   path: repo-path/jobs/check-if-file-exists.sh
   args:
-  - EXISTS/out.txt
+  - output/out.txt

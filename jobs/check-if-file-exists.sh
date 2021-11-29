@@ -7,5 +7,4 @@ FILE=$NAME
 if [ -f "$FILE" ]; then
     echo "$FILE exists." > $output
     echo "$FILE"
-    echo $EXISTS
 fi
