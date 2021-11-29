@@ -7,8 +7,6 @@ resources:
     branch: dev-test
 
 jobs:
-  #- get: repo-dev-test
-  #  trigger: true
   - name: check-if-file-exists
     plan:
       - get: repo-dev-test
