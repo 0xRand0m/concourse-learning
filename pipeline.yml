@@ -13,11 +13,14 @@ jobs:
       trigger: true
     - task: check-if-file-exists-task # task name
       #file: repo-dev-test/jobs/check-if-file-exists-task.yaml
-      image_resource:
-        type: registry-image
-        source:
-          repository: alpine
-          tag: '3.15'
-      run:
-        path: repo-dev-test/jobs/check-if-file-exists.sh
-
+      config:
+        platform: linux
+        image_resource:
+          type: registry-image
+          source:
+            repository: alpine
+            tag: '3.15'
+        run:
+          #path: repo-dev-test/jobs/check-if-file-exists.sh
+          path: echo
+          args: ["Hello Task"]
