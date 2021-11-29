@@ -8,7 +8,7 @@ image_resource:
     tag: '3.15'
 
 params: 
-  FILE:
+  NAME:
 
 inputs:
   - name: repo-path
@@ -18,4 +18,4 @@ inputs:
 run:
   path: repo-path/jobs/check-if-file-exists.sh
   args:
-    - output/out.txt
+    - $NAME
