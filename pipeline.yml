@@ -17,8 +17,8 @@ jobs:
         file: repo-dev-test/jobs/check-if-file-exists-task.yml
         input_mapping:
           repo-path: repo-dev-test
-        output_mapping:
-          output: generated-output
+        #output_mapping:
+        #  output: generated-output
         params:
           NAME: repo-dev-test/README.md
           FILE: repo-dev-test/README.md

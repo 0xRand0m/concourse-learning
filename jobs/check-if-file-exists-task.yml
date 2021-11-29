@@ -10,6 +10,7 @@ image_resource:
 params: 
   NAME:
   FILE:
+  NAME1: test-file
 
 inputs:
   - name: repo-path
