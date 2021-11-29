@@ -3,27 +3,23 @@ resources:
 - name: repo-dev-test
   type: git
   source:
-    #uri: https://github.com/0xRand0m/concourse-learning.git
-    uri: git@github.com:0xRand0m/concourse-learning.git
-    #branch: dev-test
+    uri: https://github.com/0xRand0m/concourse-learning.git
+    branch: dev-test
 
 jobs:
-- name: check-if-file-exists
-  plan:
-  - task: hello-world-task
-    config:
-      # Tells Concourse which type of worker this task should run on
-      platform: linux
-      # This is one way of telling Concourse which container image to use for a
-      # task. We'll explain this more when talking about resources
-      image_resource:
-        type: registry-image
-        source:
-          repository: busybox # images are pulled from docker hub by default
-      # The command Concourse will run inside the container
-      # echo "Hello world!"
-      run:
-        path: echo
-        args: ["Hello world!"]
-  - get: repo-dev-test
-    trigger: true
+  #- get: repo-dev-test
+  #  trigger: true
+  - name: check-if-file-exists
+    plan:
+      - get: repo-dev-test
+        trigger: true
+      - task: check-if-file-exists-task # task name
+        #file: repo-dev-test/jobs/check-if-file-exists-task.yaml
+        #config:
+        file: repo-dev-test/jobs/check-if-file-exists-task.yaml
+        input_mapping:
+          learning-git: learning
+        output_mapping:
+          output: generated-output
+        params:
+          file: repo-dev-test/README.md

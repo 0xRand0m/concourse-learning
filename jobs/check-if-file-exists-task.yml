@@ -1,14 +1,18 @@
 ---
 platform: linux
 
- 
+image_resource:
+  type: registry-image
+  source:
+    repository: alpine
+    tag: '3.15'
 
-params: 
+#params: 
   FILE:
 
-inputs:
+#inputs:
   - name: file-path
-outputs:
+#outputs:
   - name: output
 
 run:
