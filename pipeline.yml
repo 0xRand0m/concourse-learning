@@ -26,4 +26,4 @@ jobs:
         input_mapping:
           repo-path: repo-dev-test
           output: generated-output
-        file: epo-dev-test/jobs/return-if-file-exists-task.yml
+        file: repo-dev-test/jobs/return-if-file-exists-task.yml
