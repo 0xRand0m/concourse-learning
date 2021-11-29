@@ -5,7 +5,7 @@ resources:
   source:
     #uri: https://github.com/0xRand0m/concourse-learning.git
     uri: git@github.com:0xRand0m/concourse-learning.git
-    branch: dev-test
+    #branch: dev-test
 
 jobs:
 - name: check-if-file-exists
