@@ -16,7 +16,7 @@ jobs:
         #config:
         file: repo-dev-test/jobs/check-if-file-exists-task.yml
         input_mapping:
-          learning-git: learning
+          repo-path: repo-dev-test
         output_mapping:
           output: generated-output
         params:

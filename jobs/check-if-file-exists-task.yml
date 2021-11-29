@@ -10,12 +10,12 @@ image_resource:
 params: 
   FILE:
 
-#inputs:
-  #- name: file-path
-outputs:
-  - name: output
+inputs:
+  - name: repo-path
+#outputs:
+  #- name: output
 
 run:
-  path: repo-dev-test/jobs/check-if-file-exists.sh
+  path: repo-path/jobs/check-if-file-exists.sh
   args:
     - output/out.txt
