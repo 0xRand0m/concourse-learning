@@ -1,24 +1,23 @@
 ---
 resources:
-- name: learning
+- name: repo-dev-test
   type: git
-  source: {uri: "https://github.com/0xRand0m/concourse-learning.git"}
+  source:
+    uri: {uri: "https://github.com/0xRand0m/concourse-learning.git"}
+    branch: dev-test
 
 jobs:
-- name: hello-job
+- name: check-if-file-exists
   plan:
-    - get: learning
+    - get: repo-dev-test
       trigger: true
-    - task: generate-output
-      input_mapping:
-        learning-git: learning
-      output_mapping:
-        output: generated-output
-      params:
-        NAME: Jan
-      file: learning/jobs/generate-message.yml
-    - task: print-output
-      input_mapping:
-        learning-git: learning
-        message: generated-output
-      file: learning/jobs/hello-world.yml
+    - task: check-if-file-exists-task # task name
+      #file: repo-dev-test/jobs/check-if-file-exists-task.yaml
+      image_resource:
+        type: registry-image
+        source:
+          repository: alpine
+          tag: '3.15'
+      run:
+        path: repo-dev-test/jobs/check-if-file-exists.sh
+
