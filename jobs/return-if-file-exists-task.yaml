@@ -1,0 +1,56 @@
+---
+jobs:
+- name: hello-world-job
+  plan:
+  - get: repo-dev-test
+    trigger: true
+  - task: hello-world-task # task name
+      outputs:
+      - name: repo-dev-test
+      # params for shell-script
+      params:
+        file-path: repo-dev-test/README.md
+      run:
+        path: repo-dev-test/jobs/check-if-file-exists.sh
+  - task: hello-world-list
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: alpine
+          tag: 3.15
+      input:
+      - name: repo-dev-test
+      run:
+        path: echo
+        args: ["$EXISTS"]
+
+---
+- task: return-if-file-exists
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: alpine
+          tag: 3.15
+      input:
+      - name: repo-dev-test
+      run:
+        path: echo
+        args: ["$EXISTS"]
+
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: alpine
+    tag: '3.15'
+
+params: file
+
+inputs:
+  - file: file-path
