@@ -3,7 +3,7 @@ resources:
 - name: repo-dev-test
   type: git
   source:
-    uri: {uri: "https://github.com/0xRand0m/concourse-learning.git"}
+    uri: {"https://github.com/0xRand0m/concourse-learning.git"}
     branch: dev-test
 
 jobs:
