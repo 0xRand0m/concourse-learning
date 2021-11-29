@@ -16,6 +16,9 @@ inputs:
   - name: output
 
 run: 
-  path: cat
+  #path: cat
+  #args:
+  #  - output/out.txt
+  path: repo-path/jobs/return-if-file-exists.sh
   args:
-    - output/out.txt
+  - output/out.txt
