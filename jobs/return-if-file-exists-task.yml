@@ -19,4 +19,4 @@ inputs:
 run: 
   path: cat
   args:
-    - message/out.txt
+    - output/out.txt
