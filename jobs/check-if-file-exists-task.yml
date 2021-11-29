@@ -14,10 +14,10 @@ params:
 
 inputs:
   - name: repo-path
-#outputs:
-  #- name: output
+outputs:
+  - name: output
 
 run:
   path: repo-path/jobs/check-if-file-exists.sh
   args:
-    - $NAME
+  - EXISTS/out.txt
