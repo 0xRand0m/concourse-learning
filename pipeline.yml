@@ -17,6 +17,7 @@ jobs:
       params:
         NAME: Jan
       file: learning/jobs/generate-message.yml
+      
     - task: print-output
       input_mapping:
         learning-git: learning
